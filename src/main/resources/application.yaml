@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:33306/jwt_test_db
+    username: jwt_test_user
+    password: password
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+#  main:
+#    allow-circular-references: false
+#    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
