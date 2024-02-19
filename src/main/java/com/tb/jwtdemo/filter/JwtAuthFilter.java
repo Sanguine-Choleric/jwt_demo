@@ -2,7 +2,6 @@ package com.tb.jwtdemo.filter;
 
 import com.tb.jwtdemo.service.JwtService;
 import com.tb.jwtdemo.service.UserInfoService;
-import jakarta.annotation.PostConstruct;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

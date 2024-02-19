@@ -2,10 +2,8 @@ package com.tb.jwtdemo.config;
 
 import com.tb.jwtdemo.filter.JwtAuthFilter;
 import com.tb.jwtdemo.service.UserInfoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -25,7 +23,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableMethodSecurity
 public class SecurityConfig {
 
-//    @Autowired
+    //    @Autowired
     private JwtAuthFilter authFilter;
 
     public SecurityConfig(JwtAuthFilter authFilter) {
@@ -64,7 +62,7 @@ public class SecurityConfig {
                         (csrf) -> csrf.disable())
                 .authorizeHttpRequests(
                         (authorizeHttpRequests) -> authorizeHttpRequests
-                                .requestMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken")
+                                .requestMatchers("/auth/home", "/auth/addNewUser", "/auth/getToken")
                                     .permitAll()
                                 .requestMatchers("/auth/user/**")
                                     .authenticated()

@@ -27,9 +27,9 @@ public class UserController {
     }
 
 
-    @GetMapping("/welcome")
-    public String welcome() {
-        return "Reached Welcome";
+    @GetMapping("/home")
+    public String home() {
+        return "Reached home";
     }
 
     @PostMapping("/addNewUser")
@@ -37,19 +37,19 @@ public class UserController {
         return service.addUser(userInfo);
     }
 
-    @GetMapping("/user/userProfile")
+    @GetMapping("/user/userPage")
     @PreAuthorize("hasAuthority('ROLE_USER')")
-    public String userProfile() {
-        return "Reached User Profile";
+    public String userPage() {
+        return "Reached User Page";
     }
 
-    @GetMapping("/admin/adminProfile")
+    @GetMapping("/admin/adminPage")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    public String adminProfile() {
-        return "Reached Admin Profile";
+    public String adminPage() {
+        return "Reached Admin Page";
     }
 
-    @PostMapping("/generateToken")
+    @PostMapping("/getToken")
     public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
         if (authentication.isAuthenticated()) {
