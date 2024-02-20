@@ -37,7 +37,7 @@ public class SecurityConfig {
 
 
     @Bean
-    public UserDetailsService userDetailsService() {
+    public static UserDetailsService userDetailsService() {
         return new UserInfoService();
     }
 
@@ -76,7 +76,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
